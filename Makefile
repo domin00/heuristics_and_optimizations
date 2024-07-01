@@ -4,3 +4,6 @@ install:
 
 test:
 	pytest test_greedy_coin.py
+
+format:
+	black *.py 

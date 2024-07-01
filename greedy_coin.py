@@ -1,8 +1,6 @@
 import click
 
 
-
-
 def make_change(amount):
     # List of Polish coin denominations in descending order
     coins = [500, 200, 100, 50, 20, 10, 5, 2, 1]
@@ -21,26 +19,23 @@ def make_change(amount):
     for coin, count in change.items():
         if count > 0:
             if coin >= 100:
-                click.echo(f'{count} x {coin // 100} złoty')
+                click.echo(f"{count} x {coin // 100} złoty")
             else:
-                click.echo(f'{count} x {coin} groszy')
+                click.echo(f"{count} x {coin} groszy")
 
     return change
 
 
 @click.command()
-@click.option('--amount', default=1.00, help='Amount to give change for.')
+@click.option("--amount", default=1.00, help="Amount to give change for.")
 def main(amount):
-    '''
+    """
     A function to return the least amount of coins given a change amount.
-    '''
+    """
 
     make_change(amount)
 
 
-if __name__ == '__main__':
-     
+if __name__ == "__main__":
+
     main()
-
-    
-
